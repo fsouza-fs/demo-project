@@ -10,6 +10,9 @@ jobs:
   build-project:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout to the repository
+        uses: actions/checkout@v2
+        
       - name: Cache node modules
         id: cache-npm
         uses: actions/cache@v3
