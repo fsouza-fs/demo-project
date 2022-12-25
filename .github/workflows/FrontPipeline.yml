@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Checkout to the repository
         uses: actions/checkout@v2
-        
+
       - name: Cache node modules
         id: cache-npm
         uses: actions/cache@v3
@@ -33,8 +33,12 @@ jobs:
       - name: Create test build
         run: npm run build
 
-      - name: Git clone the repository
-        uses: actions/checkout@v3
+      # - name: Git clone the repository
+      #   uses: actions/checkout@v3
+
+      - name: Show files
+        run: ls
+        
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh/
